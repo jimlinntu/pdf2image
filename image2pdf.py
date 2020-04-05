@@ -39,7 +39,7 @@ for image_p in current.iterdir():
 paths_and_indices.sort(key=lambda e: e[1])
 
 start_image_p = paths_and_indices[0][0]
-start_image = Image.open(start_image_p)
+start_image = exif_rotate(Image.open(start_image_p))
 append_images = []
 for image_p, _ in paths_and_indices[1:]:
     image = Image.open(image_p)
